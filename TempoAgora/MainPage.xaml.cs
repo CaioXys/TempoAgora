@@ -24,7 +24,11 @@ namespace TempoAgora
                     {
                         string dados_previsao = "";
 
-                        dados_previsao = 
+                        dados_previsao =
+                            $"Cidade: {txt_cidade.Text}\n" +
+                            $"Clima: {t.main} - {t.description}\n" +
+                            $"Visibilidade: {t.visibility} m\n" +
+                            $"Vento: {t.speed} m/s\n" +
                             $"Latitude: {t.lat}\n" +
                             $"Longitude: {t.lon}\n" +
                             $"Nascer do sol: {t.sunrise}\n" +
