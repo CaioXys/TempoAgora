@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Net;
-using System.Net.Http;
 
 namespace TempoAgora.Models;
 
@@ -42,18 +41,18 @@ public class DataService
                 }
                 else if (resp.StatusCode == HttpStatusCode.NotFound)
                 {
-                    // Em vez de Console.WriteLine, lançamos um erro
+                    // Lança um erro se a cidade não for encontrada
                     throw new Exception("Cidade não encontrada.");
                 }
                 else
                 {
-                    // Lançamos um erro para outros problemas de requisição
+                    // Lança um erro para outros problemas de requisição
                     throw new Exception($"Erro na API: {resp.StatusCode}");
                 }
             }
             catch (HttpRequestException)
             {
-                // Lançamos um erro para falta de conexão
+                // Lança um erro para falta de conexão
                 throw new Exception("Alerta: Sem conexão com a internet.");
             }
         }
