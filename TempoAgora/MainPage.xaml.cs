@@ -36,6 +36,13 @@ namespace TempoAgora
                             $"Temp Min: {t.temp_min}\n";
 
                         lbl_res.Text = dados_previsao;
+
+                        string mapa = $"https://embed.windy.com/embed.html?" +
+                                      $"type=map&location=coordinates&metricRain=mm&metricTemp=°C" +
+                                      $"&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface" +
+                                      $"&lat={t.lat.ToString().Replace(",", ".")}&lon={t.lon.ToString().Replace(",", ".")}";
+
+                        wv_mapa.Source = mapa;
                     }
                     else
                     {
